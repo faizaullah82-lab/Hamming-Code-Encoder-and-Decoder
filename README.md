@@ -48,3 +48,7 @@ The testbench sets a 4-bit input, flips one bit in the encoded output, and confi
 ## Notes
 
 This project was built to understand Hamming code error correction at the RTL level, including how syndrome decoding maps back to bit position, and how a single XOR-based bit flip differs from other ways of corrupting data during simulation.
+
+## Reference
+
+Built with guidance from this YouTube video on Hamming code encoding and decoding: https://www.youtube.com/watch?v=qF2K3vh5-pg
