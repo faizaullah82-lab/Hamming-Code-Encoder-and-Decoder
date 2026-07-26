@@ -4,10 +4,18 @@ A Verilog implementation of Hamming(7,4) error detection and correction. Takes 4
 
 ## What's in this repo
 - `design.sv` includes
-   -`hamming_encoder module` - Encodes 4-bit input data into a 7-bit Hamming codeword
-   -`hamming_decoder modeule` - Decodes a 7-bit codeword, computes the syndrome, and corrects a single-bit error if one is found
+   - `hamming_encoder module` - Encodes 4-bit input data into a 7-bit Hamming codeword
+   - `hamming_decoder modeule` - Decodes a 7-bit codeword, computes the syndrome, and corrects a single-bit error if one is found
 - `testbench.sv` includes
    - `tb_hamming_encoder_2  module` - Testbench with a channel model that flips a bit in the codeword to simulate transmission errors
+
+## Test results
+
+The testbench sweeps through all 7 possible single-bit flip positions on the encoded codeword 1100110 (from input data_in = 4'b1101) and confirms the decoder catches and corrects every one:
+
+<img width="578" height="143" alt="image" src="https://github.com/user-attachments/assets/817a85c5-0461-475a-95fd-d6634490b3b1" />
+
+In every case, `error_pos` correctly identifies which bit was flipped, and corrected always matches the original codeword regardless of where the error occurred. This confirms the decoder can detect and correct a single-bit error at any position in the codeword.
 
 ## How it works
 
