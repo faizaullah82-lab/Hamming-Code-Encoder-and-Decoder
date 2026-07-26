@@ -5,9 +5,9 @@ A Verilog implementation of Hamming(7,4) error detection and correction. Takes 4
 ## What's in this repo
 - `design.sv` includes
    - `hamming_encoder module` - Encodes 4-bit input data into a 7-bit Hamming codeword
-   - `hamming_decoder modeule` - Decodes a 7-bit codeword, computes the syndrome, and corrects a single-bit error if one is found
+   - `hamming_decoder module` - Decodes a 7-bit codeword, computes the syndrome, and corrects a single-bit error if one is found
 - `testbench.sv` includes
-   - `tb_hamming_encoder_2  module` - Testbench with a channel model that flips a bit in the codeword to simulate transmission errors
+   - `tb_hamming_encoder_2 module` - Testbench with a channel model that flips a bit in the codeword to simulate transmission errors
 
 ## Test results
 
